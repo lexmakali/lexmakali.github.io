@@ -1,0 +1,25 @@
+<!-- views/index.erb -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Repositories</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>GitHub Repositories for <%= settings.github_username %></h1>
+
+  <div id="repos">
+    <% @repos.each do |repo| %>
+      <div class="repo">
+        <h2><%= repo.name %></h2>
+        <p><strong>Language:</strong> <%= repo.language %></p>
+        <p><strong>Stars:</strong> <%= repo.stargazers_count %></p>
+        <p><strong>Forks:</strong> <%= repo.forks_count %></p>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
